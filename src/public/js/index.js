@@ -1,17 +1,4 @@
-// connecting with server
-const socket = io();
-
-
-// functions to make it easier
-function getValues() {
-  const author = document.getElementById("username").value;
-  const text = document.getElementById("message").value;
-
-  return {
-    author, text
-  };
-}
-
+// functions to send and show messages
 function showMessage(message) {
   const { author, text, date } = message;
   const messagesList = document.getElementById("messages-list");
@@ -19,10 +6,6 @@ function showMessage(message) {
 
   messageElement.innerText = `${author}: ${text} | ${date}`;
   messagesList.appendChild(messageElement);
-}
-
-function clearMessage() {
-  document.getElementById("message").value = "";
 }
 
 function onSubmit(event) {
@@ -33,19 +16,9 @@ function onSubmit(event) {
   message.date = new Date().toTimeString().slice(0,5);
 
   showMessage(message);
-  clearMessage();
+  clearInput();
 }
 
 
-// requesting elements
+// applying functions to elements
 document.getElementById("message-form").addEventListener("submit", onSubmit);
-
-
-// configuring sockets
-socket.on("setup", (messages) => {
-  for(const message of messages) showMessage(message);
-});
-
-socket.on("receiveMessage", (message) => {
-  showMessage(message);
-});
