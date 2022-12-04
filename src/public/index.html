@@ -4,26 +4,35 @@
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" href="css/style.css">
-		<title>Eden Chat</title>
+		<link rel="stylesheet" href="css/login.css">
+		<title>Eden Chat | Login</title>
 	</head>
+	<body>
 
-  <body>
+		<hr>
+		
+		<div class="center">
+			<form>
+				<h1>Login</h1>
+				<input name="username" placeholder="Username" type="text" required>
+				<input name="password" placeholder="Password" type="password" required>
+				<button>Login</button>
+			</form>
 
-		<h1>Eden Chat</h1>
+			<hr>
 
-		<ul id="messages-list"></ul>
-  
-		<form id="message-form" autocomplete="off">
-			<input placeholder="Username" id="username" type="text" required>
-			<input placeholder="Message" id="message" type="text" required>
-			<button>Send</button>
-		</form>
+			<form>
+				<h1>Register</h1>
+				<input name="username" placeholder="Username" type="text" required>
+				<input name="password" placeholder="Password" type="password" required>
+				<input name="confirm-password" placeholder="Confirm password" type="password" required>
+				<button>Register</button>
+			</form>
+		</div>
 
-		<script src="js/utils.js"></script>
-    <script src="socket.io/socket.io.js"></script>
-		<script src="js/websocket.js"></script>
-		<script src="js/index.js"></script>
+		<hr>
+
+		<script src="js/login.js"></script>
 
 	</body>
 </html>
