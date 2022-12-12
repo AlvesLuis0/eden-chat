@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Eden Chat</title>
+	</head>
+	<body>
+
+		<hr>
+		
+		<form id="formMessage" autocomplete="off">
+			<input id="inputMessage" name="message" placeholder="Message" type="text" required>
+			<button>Send</button>
+		</form>
+
+		<hr>
+
+		<ul id="messageList"></ul>
+
+		<script src="socket.io/socket.io.js"></script>
+		<script src="js/helper.js"></script>
+		<script src="js/chat.js"></script>
+		<script src="js/socket.js"></script>
+
+	</body>
+</html>
